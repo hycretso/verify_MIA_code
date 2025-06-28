@@ -211,60 +211,6 @@ def get_all_prob(input_ids, loss, logits):
 def inference(model1, model2, model3, embedding_model, tokenizer1, tokenizer2, tokenizer3, decoding, target_data, prefix, accelerator, num_shots, ex):
     pred = {}
 
-    # unconditional log-likelihood
-    ll = get_ll(target_data, model1, tokenizer1,accelerator.device)[1]
-
-    # ReCaLL
-    if int(num_shots) != 0:   
-        # conditional log-likelihood with prefix     
-        ll_nonmember = get_conditional_ll("".join(prefix), target_data, model1, tokenizer1, accelerator.device)[1]
-        pred["recall"] = ll_nonmember / ll
-
-    # baselines
-    input_ids = torch.tensor(tokenizer1.encode(target_data)).unsqueeze(0).to(accelerator.device)
-    with torch.no_grad():
-        outputs = model1(input_ids, labels=input_ids)
-    _, logits = outputs[:2]
-    ll_ref = get_ll(target_data, model2, tokenizer2, accelerator.device)[1]
-
-    # loss and zlib
-    pred["ll"] = ll
-    pred["ref"] = ll - ll_ref
-    pred["zlib"] = ll / len(zlib.compress(bytes(target_data, "utf-8")))
-
-    # For mink and mink++
-    input_ids = input_ids[0][1:].unsqueeze(-1)
-    probs = F.softmax(logits[0, :-1], dim=-1)
-    log_probs = F.log_softmax(logits[0, :-1], dim=-1)
-    token_log_probs = log_probs.gather(dim=-1, index=input_ids).squeeze(-1)
-    mu = (probs * log_probs).sum(-1)
-    sigma = (probs * torch.square(log_probs)).sum(-1) - torch.square(mu)
-
-    ## mink
-    for ratio in [0.2]:
-        k_length = int(len(token_log_probs) * ratio)
-        topk = np.sort(token_log_probs.cpu())[:k_length]
-        pred[f"mink_{ratio}"] = np.mean(topk).item()
-
-    ## mink++
-    mink_plus = (token_log_probs - mu) / sigma.sqrt()
-    for ratio in [0.2]:
-        k_length = int(len(mink_plus) * ratio)
-        topk = np.sort(mink_plus.cpu())[:k_length]
-        pred[f"mink++_{ratio}"] = np.mean(topk).item()
-
-    #********  新增recall + 相似度结合***********
-    # unconditional text_similarity
-    text_similarity = calculateTextSimilarity(model1, embedding_model, tokenizer1, target_data, decoding=decoding, device=model1.device)
-    pred["Similarity"] = -np.mean(text_similarity).item()
-    ll = pred["Similarity"]
-
-    if int(num_shots) != 0:  
-        # conditional text_similarity with prefix     
-        text_similarity_nonmember = get_conditional_calculateTextSimilarity(model1, embedding_model, tokenizer1, target_data, "".join(prefix), decoding=decoding, device=model1.device)
-        ll_nonmember = -np.mean(text_similarity_nonmember).item()
-        pred["recall_similarity"] = ll_nonmember / ll
-
     #******** 新增 PETAL代码 ********************
     slope, intercept = fitting(model3, embedding_model, tokenizer3, target_data, decoding=decoding)
 
@@ -272,19 +218,6 @@ def inference(model1, model2, model3, embedding_model, tokenizer1, tokenizer2, t
 
     all_prob_estimated = [i*slope + intercept for i in text_similarity]
     pred["PETAL"] = -np.mean(all_prob_estimated).item()
-
-    #********  新增recall + PETAL结合***********
-
-    ll = pred["PETAL"]
-
-    if int(num_shots) != 0:  
-        # conditional text_prob with prefix     
-        text_similarity_nonmember = get_conditional_calculateTextSimilarity(model1, embedding_model, tokenizer1, target_data, "".join(prefix), decoding=decoding, device=model1.device)
-        slope, intercept = fitting(model3, embedding_model, tokenizer3, "".join(prefix) + target_data, decoding=decoding)
-        all_prob_estimated = [i*slope + intercept for i in text_similarity_nonmember]
-        ll_nonmember = -np.mean(all_prob_estimated).item()
-        pred["recall_PETAL"] = ll_nonmember / ll 
-
 
     ex["pred"] = pred
     return ex
@@ -349,7 +282,6 @@ def evaluate_data(test_data, model1, model2, model3, embedding_model, tokenizer1
     return all_output
 
 if __name__ == "__main__":
-    fix_seed(42)
     args = Options()
     args = args.parser.parse_args()
 

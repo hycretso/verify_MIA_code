@@ -23,8 +23,6 @@ def create_dataset(dataset_name,sub_dataset_name, output_dir, num_shots):
         dataset_folder = os.path.join(output_dir, f"{sub_dataset_name}", "data")
         
         # shuffle the datasets
-        random.shuffle(member_data)
-        random.shuffle(nonmember_data)
         num_shots = int(num_shots)
 
         nonmember_prefix = nonmember_data[:num_shots]
