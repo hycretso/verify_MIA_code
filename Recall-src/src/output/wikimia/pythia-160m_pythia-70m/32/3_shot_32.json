@@ -1,0 +1,184 @@
+{
+    "recall": {
+        "AUC-ROC": 0.723,
+        "ACC": 0.68,
+        "TPR@0.1%FPR": 0.003,
+        "TPR@1%FPR": 0.042,
+        "TPR@5%FPR": 0.146,
+        "TPR@10%FPR": 0.284,
+        "TPR@20%FPR": 0.43
+    },
+    "ll": {
+        "AUC-ROC": 0.551,
+        "ACC": 0.549,
+        "TPR@0.1%FPR": 0.003,
+        "TPR@1%FPR": 0.021,
+        "TPR@5%FPR": 0.089,
+        "TPR@10%FPR": 0.13,
+        "TPR@20%FPR": 0.279
+    },
+    "ref": {
+        "AUC-ROC": 0.554,
+        "ACC": 0.556,
+        "TPR@0.1%FPR": 0.013,
+        "TPR@1%FPR": 0.016,
+        "TPR@5%FPR": 0.068,
+        "TPR@10%FPR": 0.117,
+        "TPR@20%FPR": 0.229
+    },
+    "zlib": {
+        "AUC-ROC": 0.582,
+        "ACC": 0.574,
+        "TPR@0.1%FPR": 0.008,
+        "TPR@1%FPR": 0.023,
+        "TPR@5%FPR": 0.089,
+        "TPR@10%FPR": 0.164,
+        "TPR@20%FPR": 0.31
+    },
+    "mink_0.2": {
+        "AUC-ROC": 0.531,
+        "ACC": 0.527,
+        "TPR@0.1%FPR": 0.008,
+        "TPR@1%FPR": 0.013,
+        "TPR@5%FPR": 0.073,
+        "TPR@10%FPR": 0.133,
+        "TPR@20%FPR": 0.227
+    },
+    "mink++_0.2": {
+        "AUC-ROC": 0.503,
+        "ACC": 0.503,
+        "TPR@0.1%FPR": 0.0,
+        "TPR@1%FPR": 0.0,
+        "TPR@5%FPR": 0.0,
+        "TPR@10%FPR": 0.0,
+        "TPR@20%FPR": 0.0
+    },
+    "Similarity": {
+        "AUC-ROC": 0.44,
+        "ACC": 0.503,
+        "TPR@0.1%FPR": 0.0,
+        "TPR@1%FPR": 0.008,
+        "TPR@5%FPR": 0.039,
+        "TPR@10%FPR": 0.089,
+        "TPR@20%FPR": 0.148
+    },
+    "recall_similarity": {
+        "AUC-ROC": 0.696,
+        "ACC": 0.655,
+        "TPR@0.1%FPR": 0.013,
+        "TPR@1%FPR": 0.039,
+        "TPR@5%FPR": 0.151,
+        "TPR@10%FPR": 0.255,
+        "TPR@20%FPR": 0.409
+    },
+    "PETAL": {
+        "AUC-ROC": 0.396,
+        "ACC": 0.503,
+        "TPR@0.1%FPR": 0.003,
+        "TPR@1%FPR": 0.008,
+        "TPR@5%FPR": 0.029,
+        "TPR@10%FPR": 0.052,
+        "TPR@20%FPR": 0.112
+    },
+    "recall_PETAL": {
+        "AUC-ROC": 0.711,
+        "ACC": 0.672,
+        "TPR@0.1%FPR": 0.044,
+        "TPR@1%FPR": 0.094,
+        "TPR@5%FPR": 0.193,
+        "TPR@10%FPR": 0.263,
+        "TPR@20%FPR": 0.443
+    },
+    "average": {
+        "recall": {
+            "prob_class_1_avg": 1.1111931361884622,
+            "prob_class_0_avg": 1.0545792156585105,
+            "prob_class_avg_1_0_diff": 0.05661392052995162,
+            "prob_class_1_std": 0.0681778196090819,
+            "prob_class_0_std": 0.07189879481717742,
+            "prob_class_1_median": 1.1058941453582425,
+            "prob_class_0_median": 1.0500510138392487
+        },
+        "ll": {
+            "prob_class_1_avg": -3.45596244558692,
+            "prob_class_0_avg": -3.561041643222173,
+            "prob_class_avg_1_0_diff": 0.10507919763525342,
+            "prob_class_1_std": 0.6614511094283684,
+            "prob_class_0_std": 0.6643667353896793,
+            "prob_class_1_median": -3.3747410774230957,
+            "prob_class_0_median": -3.4948891401290894
+        },
+        "ref": {
+            "prob_class_1_avg": 0.5199475685755411,
+            "prob_class_0_avg": 0.46059908779958886,
+            "prob_class_avg_1_0_diff": 0.059348480775952284,
+            "prob_class_1_std": 0.381357008784253,
+            "prob_class_0_std": 0.39663877817297144,
+            "prob_class_1_median": 0.5280829668045044,
+            "prob_class_0_median": 0.4823925495147705
+        },
+        "zlib": {
+            "prob_class_1_avg": -0.022908375103150722,
+            "prob_class_0_avg": -0.0240696663644729,
+            "prob_class_avg_1_0_diff": 0.0011612912613221775,
+            "prob_class_1_std": 0.004259833827114107,
+            "prob_class_0_std": 0.004258641740825604,
+            "prob_class_1_median": -0.022401804113445653,
+            "prob_class_0_median": -0.023835367319599683
+        },
+        "mink_0.2": {
+            "prob_class_1_avg": -8.377339680989584,
+            "prob_class_0_avg": -8.551513671875,
+            "prob_class_avg_1_0_diff": 0.17417399088541607,
+            "prob_class_1_std": 1.880004839108705,
+            "prob_class_0_std": 1.9906628378042195,
+            "prob_class_1_median": -8.22265625,
+            "prob_class_0_median": -8.3125
+        },
+        "mink++_0.2": {
+            "prob_class_1_avg": -0.0019203821818033855,
+            "prob_class_0_avg": -0.006105333566665649,
+            "prob_class_avg_1_0_diff": 0.004184951384862264,
+            "prob_class_1_std": 0.031545570783644235,
+            "prob_class_0_std": 0.08638867392324638,
+            "prob_class_1_median": 0.0,
+            "prob_class_0_median": 0.0
+        },
+        "Similarity": {
+            "prob_class_1_avg": 0.6445659798006573,
+            "prob_class_0_avg": 0.6632754609285532,
+            "prob_class_avg_1_0_diff": 0.018709481127895833,
+            "prob_class_1_std": 0.09410100487127603,
+            "prob_class_0_std": 0.0935887968107431,
+            "prob_class_1_median": 0.6368410699612479,
+            "prob_class_0_median": 0.6589491390426278
+        },
+        "recall_similarity": {
+            "prob_class_1_avg": 1.0096905998523458,
+            "prob_class_0_avg": 0.9354259913075215,
+            "prob_class_avg_1_0_diff": 0.0742646085448243,
+            "prob_class_1_std": 0.11696355201943961,
+            "prob_class_0_std": 0.1013527516212203,
+            "prob_class_1_median": 1.00107927589266,
+            "prob_class_0_median": 0.9335772987359352
+        },
+        "PETAL": {
+            "prob_class_1_avg": 3.1666547879562246,
+            "prob_class_0_avg": 3.382714102776591,
+            "prob_class_avg_1_0_diff": 0.21605931482036622,
+            "prob_class_1_std": 0.6045769555995686,
+            "prob_class_0_std": 0.5885569036631372,
+            "prob_class_1_median": 3.124385045061098,
+            "prob_class_0_median": 3.384506755446632
+        },
+        "recall_PETAL": {
+            "prob_class_1_avg": 1.0754211545860397,
+            "prob_class_0_avg": 0.973378614834178,
+            "prob_class_avg_1_0_diff": 0.10204253975186173,
+            "prob_class_1_std": 0.1497304785654685,
+            "prob_class_0_std": 0.1181889056330899,
+            "prob_class_1_median": 1.0545296881811979,
+            "prob_class_0_median": 0.9596676990388524
+        }
+    }
+}

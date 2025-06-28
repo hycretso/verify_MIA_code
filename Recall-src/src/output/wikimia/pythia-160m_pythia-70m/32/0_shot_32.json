@@ -1,0 +1,130 @@
+{
+    "ll": {
+        "AUC-ROC": 0.551,
+        "ACC": 0.549,
+        "TPR@0.1%FPR": 0.003,
+        "TPR@1%FPR": 0.021,
+        "TPR@5%FPR": 0.088,
+        "TPR@10%FPR": 0.129,
+        "TPR@20%FPR": 0.276
+    },
+    "ref": {
+        "AUC-ROC": 0.557,
+        "ACC": 0.557,
+        "TPR@0.1%FPR": 0.013,
+        "TPR@1%FPR": 0.016,
+        "TPR@5%FPR": 0.067,
+        "TPR@10%FPR": 0.121,
+        "TPR@20%FPR": 0.233
+    },
+    "zlib": {
+        "AUC-ROC": 0.58,
+        "ACC": 0.574,
+        "TPR@0.1%FPR": 0.008,
+        "TPR@1%FPR": 0.023,
+        "TPR@5%FPR": 0.088,
+        "TPR@10%FPR": 0.163,
+        "TPR@20%FPR": 0.307
+    },
+    "mink_0.2": {
+        "AUC-ROC": 0.53,
+        "ACC": 0.527,
+        "TPR@0.1%FPR": 0.008,
+        "TPR@1%FPR": 0.013,
+        "TPR@5%FPR": 0.072,
+        "TPR@10%FPR": 0.134,
+        "TPR@20%FPR": 0.227
+    },
+    "mink++_0.2": {
+        "AUC-ROC": 0.503,
+        "ACC": 0.503,
+        "TPR@0.1%FPR": 0.0,
+        "TPR@1%FPR": 0.0,
+        "TPR@5%FPR": 0.0,
+        "TPR@10%FPR": 0.0,
+        "TPR@20%FPR": 0.0
+    },
+    "Similarity": {
+        "AUC-ROC": 0.438,
+        "ACC": 0.503,
+        "TPR@0.1%FPR": 0.0,
+        "TPR@1%FPR": 0.008,
+        "TPR@5%FPR": 0.039,
+        "TPR@10%FPR": 0.09,
+        "TPR@20%FPR": 0.15
+    },
+    "PETAL": {
+        "AUC-ROC": 0.394,
+        "ACC": 0.503,
+        "TPR@0.1%FPR": 0.003,
+        "TPR@1%FPR": 0.008,
+        "TPR@5%FPR": 0.028,
+        "TPR@10%FPR": 0.052,
+        "TPR@20%FPR": 0.111
+    },
+    "average": {
+        "ll": {
+            "prob_class_1_avg": -3.458693123603052,
+            "prob_class_0_avg": -3.562871294736246,
+            "prob_class_avg_1_0_diff": 0.10417817113319394,
+            "prob_class_1_std": 0.6606031741060304,
+            "prob_class_0_std": 0.6639940290653092,
+            "prob_class_1_median": -3.3768599033355713,
+            "prob_class_0_median": -3.495255470275879
+        },
+        "ref": {
+            "prob_class_1_avg": 0.5218176120935485,
+            "prob_class_0_avg": 0.46067986562270524,
+            "prob_class_avg_1_0_diff": 0.061137746470843246,
+            "prob_class_1_std": 0.3805429267059513,
+            "prob_class_0_std": 0.3954646319750274,
+            "prob_class_1_median": 0.5317707061767578,
+            "prob_class_0_median": 0.48224830627441406
+        },
+        "zlib": {
+            "prob_class_1_avg": -0.022922136023239573,
+            "prob_class_0_avg": -0.024066446738321663,
+            "prob_class_avg_1_0_diff": 0.0011443107150820898,
+            "prob_class_1_std": 0.004253432670269093,
+            "prob_class_0_std": 0.004254932615737894,
+            "prob_class_1_median": -0.02240762157716613,
+            "prob_class_0_median": -0.02383577823638916
+        },
+        "mink_0.2": {
+            "prob_class_1_avg": -8.37797763242894,
+            "prob_class_0_avg": -8.548601017441861,
+            "prob_class_avg_1_0_diff": 0.17062338501292018,
+            "prob_class_1_std": 1.8751196495783984,
+            "prob_class_0_std": 1.9835984247454246,
+            "prob_class_1_median": -8.2265625,
+            "prob_class_0_median": -8.3125
+        },
+        "mink++_0.2": {
+            "prob_class_1_avg": -0.0019054954982235142,
+            "prob_class_0_avg": -0.006058005399482195,
+            "prob_class_avg_1_0_diff": 0.004152509901258681,
+            "prob_class_1_std": 0.03142351461106677,
+            "prob_class_0_std": 0.08605484855726074,
+            "prob_class_1_median": 0.0,
+            "prob_class_0_median": 0.0
+        },
+        "Similarity": {
+            "prob_class_1_avg": 0.6449164497036268,
+            "prob_class_0_avg": 0.664056070295038,
+            "prob_class_avg_1_0_diff": 0.019139620591411166,
+            "prob_class_1_std": 0.09416190543751796,
+            "prob_class_0_std": 0.09379714212931736,
+            "prob_class_1_median": 0.6369218026310316,
+            "prob_class_0_median": 0.6590700474640283
+        },
+        "PETAL": {
+            "prob_class_1_avg": 3.166046771874387,
+            "prob_class_0_avg": 3.385249651928533,
+            "prob_class_avg_1_0_diff": 0.21920288005414568,
+            "prob_class_1_std": 0.6040511446552584,
+            "prob_class_0_std": 0.5879945407625334,
+            "prob_class_1_median": 3.1229951191316507,
+            "prob_class_0_median": 3.38655742126505
+        }
+    }
+}
